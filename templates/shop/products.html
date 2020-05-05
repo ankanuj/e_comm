@@ -1,0 +1,39 @@
+{% extends 'shop/shop.html' %}
+
+{% load static %}
+{% block title %}|Shop|Men's {% endblock %}
+
+{% block shop_title %}|clothing Section |
+{% if 'shirts' in request.path %}
+shirts
+{% elif 't-shirts' in request.path %}
+t-shirts
+{% elif 'jeans' in request.path %}
+jeans
+{% elif 'trousers' in request.path %}
+trousers
+{% endif %}
+{% endblock %}
+
+{% block shop %}
+
+<div class="card-body border">
+    
+      
+        <div class="row " >
+            <!--Shirt -->  
+            {% for product in products %}
+                <div class="col-md-4 text-center">    
+                    <a href="{% url 'product_details' pk=product.id %}" >
+                        <img  src="{{product.product.url}}"class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:200px;  max-height: 200px;" alt="Image Not Available">
+                    </a>
+                    <h5 class="text-dark">{{  product.brand_name|capfirst }}</h5>
+                    <h6 class="text-info" >₹{{product.price}}</h6>
+
+                </div> 
+            {% endfor %}
+        </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% load static%}
+ <!-- Navbar -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'index' %}">Online Store
+      <!--<img src="{% static 'img/logo1.png' %}" class="logo" alt="">-->
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+      
+          <li 
+            {%  if '/' == request.path %} 
+              class="nav-item active mr-3"
+            {%else%}
+              class="nav-item mr-3"
+            {%endif%}>
+      
+          <a class="nav-link" href="{%url 'index'%}">Home</a>
+        </li>
+        <li 
+          {% if 'about' in request.path %} 
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %}
+          >
+          <a class="nav-link" href="{%url 'about'%}">About</a>
+        </li>
+        <li 
+          {% if 'shops' in request.path %} 
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %}
+          >
+          <a class="nav-link" href="{% url 'shops' %}">Shops</a>
+        </li>
+      </ul>
+
+      
+
+      <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <li class="nav-item mr-3">
+          <a class="nav-link " href="{% url 'profile' %}">
+             {{user.first_name}}</a>
+        </li>
+        <li class="nav-item mr-3">
+         <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}" style="text-decoration: none">		
+           <i class="fas fa-sign-out-alt"></i>Logout
+            <form action="{%url 'logout' %}" method="POST" id="logout">
+                    {% csrf_token %}
+                    <input type="hidden">
+                  </form>
+                </a>
+          </li>
+        {% else %}
+        <!--Register-->
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="{% url 'signup' %}">
+            <i class="fas fa-user-plus"></i> Register</a>
+        </li>
+
+        <!--Login-->
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="{% url 'login' %}" >
+            <i class="fas fa-sign-in-alt"></i>Login</a>
+        </li>
+        {% endif %}
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="{% url 'cart' %}">
+            <i  class="fas fa-shopping-basket"> Basket</i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

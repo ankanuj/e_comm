@@ -1,0 +1,113 @@
+#about_contact{
+  background: url(../img/building.jpg);
+}
+#about_col1{
+  min-height: 200px;
+  background: rgba(0,0,0,0.5);
+}
+#about_col2{
+  min-height: 200px;
+  background: rgba(0,0,0,0.5);
+}
+#about_col3{
+  min-height: 200px;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+#demo {
+  height: 400px;
+}
+
+.carousel-inner img {
+  width: 100%; /* Set width to 100% */
+  margin: auto;
+  min-height:200px;
+  max-height: 400px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+.carousel-caption {
+  display: none; 
+}
+}
+
+
+#clothes a:hover{
+  text-decoration: none;
+  color: black;
+  
+}
+#clothes a:hover img{
+  opacity: 0.5;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+
+#accessories a{
+  text-decoration: none ;
+ 
+  color:black;
+}
+
+#accessories a img:hover{
+  opacity: 0.5;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.middle{
+    transition: .3s ease;
+    opacity: 0;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center;
+}
+#clothes a:hover .middle{
+  opacity: 1;
+    
+} 
+.text {
+  background-color:cyan;
+  background: rgba(87, 243, 139, 0.6);
+
+  color:black;
+  font-size: 16px;
+  padding: 16px 32px;
+
+}
+#accessories a:hover .middle{
+  opacity: 1;
+}
+#col1 h5{
+  color: aliceblue;
+  
+}
+#col1 .card{
+  background: rgba(0,0,0,0.1);
+
+}
+#col2 h5{
+  color: aliceblue;
+
+}
+#col2 .card{
+  background: rgba(0,0,0,0.1);
+  
+
+} 
+#men_banner img{
+  
+  width: 100%;
+  max-height: 200px;
+}
+
+

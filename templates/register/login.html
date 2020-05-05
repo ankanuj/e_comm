@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block content %}
+<section>
+	<div class="container">
+	
+		<article class="card-body mx-auto" style="max-width: 400px;">
+			<h3 class="card-title mt-3 text-center">Login</h3>
+			<p>
+				<center>
+				<a href="{% provider_login_url "google" %}"  class="btn btn-danger btn-google"><i class="fab fa-google"></i> Login with Google</a>
+				</center>
+				<!--<a href="" class="btn btn-primary btn-facebook"><i class="fab fa-facebook"></i> Login with facebook</a>-->
+			</p>
+			<div class="row">
+				<div class="col"><hr></div>
+				<div class="col-auto">OR</div>
+				<div class="col"><hr></div>
+			</div>
+<!--form -->
+{% include 'partials/_alerts.html' %}
+			<form class="mr-2 ml-2 pb-2 "action="{% url 'login' %}" method="POST">
+				{% csrf_token %} 
+				<div class="form-group form-text text-left">
+				
+					<label for="email"> User Name </label>
+					<input type="varchar" name="username"class="form-control" id="username" area-describedby="username" placeholder="username">
+					<small id="username" class="form-text text-muted">We'll never share your username with anyone else.
+					</small>
+				</div>
+				<div class="form-group text-left">
+   					 <label for="password">Password</label>
+   					 <input type="password" name="password" class="form-control"  placeholder="Enter password">
+   					 <small class="form-text text-muted">We'll never share your password with anyone else.
+					</small>
+  					</div>
+					<button  type="submit" value="login" class=" btn btn-success btn-lg">Login</button>
+            </form>
+</article>
+
+</div>
+</section>
+
+{% endblock %}

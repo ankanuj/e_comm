@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section id="shopping_basket " class="bg-light">
+    <div class="container pt-2 pb-2">
+        <div class="card border-0 badge-light" id="basket">
+            <h3 class="bg-dark text-white">My Basket</h3>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="card-body border bg-white">
+                       <div class="row " > 
+                               <p> <img  src="{% static 'img/mens.jpeg' %}"class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:200px;  max-height: 200px;" alt="Image">
+                                <div class=" ml-2 ">
+                                    <h3>Brand Name</h3>
+                                    <h5 style="color:lightgrey;">Brand Titile</h5>
+                                    <h4>Price :</h4>
+                                    <h4>Size :</h4>
+                                    <h4>Quantity :</h4>
+                                </div>
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card-body border bg-white">
+                        <h4>Price Details</h4><hr>
+                        <h4>price(1) : 550</h4>
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <h4>+0</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3"></div> 
+                            <div class="col-sm-4"><hr></div>  
+                        </div>
+                        <h5>Total price : 550 </h5>
+                        <button class="btn btn-danger">Place Order</button>
+                    </div>
+                </div>
+
+            </div>
+          
+        </div>
+    </div>
+</section>
+{% endblock %}
