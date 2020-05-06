@@ -8,9 +8,20 @@ urlpatterns = [
     #path('electronics/',views.electronics_shop,name='electronics'),
     #path('beauty_products/',views.beauty_shop,name='beauty'),
     #path('other_stuff/',views.other_shop,name='other'),
-    path('mens/footwear/',views.men_footwear,name='men_footwear'),
-    path('mens/watches/',views.men_watches,name='men_watches'),
-    path('mens/bags/',views.men_bags,name='men_bags'),
+
+
+    path('mens/footwear/',views.footwear,name='footwear_men'),
+    path('womens/footwear/',views.footwear,name='women_footwear'),
+    path('kids/footwear/',views.footwear,name='kids_footwear'),
+
+    path('mens/watches/',views.watches,name='men_watches'),
+    path('womens/watches/',views.watches,name='women_watches'),
+    path('kids/watches/',views.watches,name='kids_watches'),
+
+    path('bags/mens',views.bags,name='men_bags'),
+    path('bags/womens',views.bags,name='women_bags'),
+    path('bags/kids',views.bags,name='kids_bags'),
+
 
     path('mens/clothing/',views.clothing,name='clothing_mens'),
     path('womens/clothing/',views.clothing,name='clothing_womens'),

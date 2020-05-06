@@ -18,13 +18,13 @@ def kids_shop(request):
 def clothing(request):
     return render(request,'shop/clothing.html')
 
-def men_footwear(request):
+def footwear(request):
     return render(request,'shop/footwear.html')
 
-def men_watches(request):
+def watches(request):
     return render(request,'shop/watches.html')
 
-def men_bags(request):
+def bags(request):
     return render(request,'shop/bags.html')
 
 '''

@@ -1,9 +1,10 @@
 {% extends 'shop/shop.html' %}
 
 {% load static %}
-{% block title %}|Shop|Men's {% endblock %}
+{% block title %}|Shop {% endblock %}
 
-{% block shop_title %}|clothing Section |
+{% block shop_title %}|{%if 'footwear' in request.path %} Footwear {% elif 'bags' in request.path %} Bags
+{% elif 'watches' in request.path %} Watches {% else %} clothing Section {% endif %}|
 {% if 'shirts' in request.path %}
 shirts
 {% elif 't-shirts' in request.path %}
@@ -12,6 +13,9 @@ t-shirts
 jeans
 {% elif 'trousers' in request.path %}
 trousers
+{% elif 'formals' in request.path %}
+formals
+{% elif 'sports' in request.path %}Sports{% elif 'casuals' in request.path %}Casuals{% elif 'sandals' in request.path %}Sandals{% elif 'sleepers' in request.path %}Sleepers
 {% endif %}
 {% endblock %}
 
@@ -23,11 +27,16 @@ trousers
         <div class="row " >
             <!--Shirt -->  
             {% for product in products %}
-                <div class="col-md-4 text-center">    
-                    <a href="{% url 'product_details' pk=product.id %}" >
-                        <img  src="{{product.product.url}}"class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:200px;  max-height: 200px;" alt="Image Not Available">
+                <div class="col-md-4 text-center">
+                    {% if 'footwear' in request.path %}    
+                        <a href="{% url 'product_footwear_details' pk=product.id %}" >
+                    {% elif 'clothing' in request.path %}
+                        <a href="{% url 'product_clothing_details' pk=product.id %}" >
+
+                    {% endif %}
+                        <img  src="{{product.product.url}}"class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image Not Available">
                     </a>
-                    <h5 class="text-dark">{{  product.brand_name|capfirst }}</h5>
+                    <h5 class="text-dark">{{  product.brand_name|capfirst  }}</h5>
                     <h6 class="text-info" >₹{{product.price}}</h6>
 
                 </div> 

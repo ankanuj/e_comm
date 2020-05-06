@@ -1,18 +1,113 @@
 {% extends 'shop/shop.html' %}
 
 {% load static %}
-{% block title %}|Shop|Men's {% endblock %}
+{% block title %}|Shop|Footwear {% endblock %}
 
-{% block shop_title %}|<a href="{% url 'mens' %}" class="text-white">Men's Section </a>{% endblock %}
+{% block shop_title %}|Footwear{% endblock %}
 
 {% block shop %}
 
 <div class="card-body border">
-    {% if 'mens/footwear/' in request.path %}
+    
     <div id="clothes" class="container-fluid text-center" >    
-        <h1>hi</h1>
+        <div class="row " >
+            <!--Sports Shoes -->  
+        
+                <div  class="col-sm-4">
+                    {% if 'shops/mens' in request.path %}
+                        <a href="{% url 'formals_men' %}" >
+                    {% elif 'womens' in request.path %}
+                        <a href="{% url 'formals_women' %}">
+                    {% elif 'kids' in request.path %}
+                        <a href="{% url 'formals_kids' %}">
+                    {%  endif %}   
+                    <img  src="{% static 'img/mens.jpeg' %}"class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">
+                    <div class="middle">
+                    <div class="text">
+                        <b>Formal Shoes</b>
+                    </div>
+                    </div>
+                    <h6>Formal Shoes</h6>
+                    </a>
+                </div>
+        <!-- Sports Shoes -->  
+        
+                <div class="col-sm-4">
+                    {% if 'shops/mens' in request.path %}
+                        <a href="{% url 'sports_men' %}" >
+                    {% elif 'womens' in request.path %}
+                        <a href="{% url 'sports_women' %}">
+                    {% elif 'kids' in request.path %}
+                        <a href="{% url 'sports_kids' %}">
+                    {% endif %} 
+                    <img src="{% static 'img/womens.jpeg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">
+                    <div class="middle">
+                    <div class="text">
+                        <b>Sports Shoes</b>
+                    </div>
+                    </div>
+                    <h6>Sports Shoes</h6> 
+                    </a>   
+                </div>
+        <!-- Casual Shoes-->  
+        
+                <div class="col-sm-4">
+                    {% if 'shops/mens' in request.path %}
+                        <a href="{% url 'casuals_men' %}" >
+                    {% elif 'womens' in request.path %}
+                        <a href="{% url 'casuals_women' %}">
+                    {% elif 'kids' in request.path %}
+                        <a href="{% url 'casuals_kids' %}">
+                    {%  endif %} 
+                        <img src="{% static 'img/kids.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">         
+                        <div class="middle">
+                        <div class="text">
+                            <b>Casual Shoes</b>
+                        </div>
+                        </div>
+                        <h6>Casual Shoes</h6>
+                    </a>
+                    </div>
+               
+        <!-- Sandals -->
+                <div class="col-sm-4">
+                    {% if 'shops/mens' in request.path %}
+                        <a href="{% url 'sandals_men' %}" >
+                    {% elif 'womens' in request.path %}
+                        <a href="{% url 'sandals_women' %}">
+                    {% elif 'kids' in request.path %}
+                        <a href="{% url 'sandals_kids' %}">
+                    {%  endif %} 
+                    <img src="{% static 'img/electronics.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">
+                    <div class="middle">
+                    <div class="text">
+                        <b>Sandals</b>
+                    </div>
+                    </div>
+                    <h6>Sandals</h>
+                    </a>
+                </div>
+<!--Sleepers-->
+                <div class="col-sm-4">
+                    {% if 'shops/mens' in request.path %}
+                        <a href="{% url 'sleepers_men' %}" >
+                    {% elif 'womens' in request.path %}
+                        <a href="{% url 'sleepers_women' %}">
+                    {% elif 'kids' in request.path %}
+                        <a href="{% url 'sleepers_kids' %}">
+                    {%  endif %} 
+                    <img src="{% static 'img/electronics.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">
+                    <div class="middle">
+                    <div class="text">
+                        <b>Sleepers</b>
+                    </div>
+                    </div>
+                    <h6>Sleepers</h>
+                    </a>
+                </div>
+            </div>
     </div>
-    {% endif %}
+   
 
 </div>
 {% endblock %}
