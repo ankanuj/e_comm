@@ -32,6 +32,9 @@ formals
                         <a href="{% url 'product_footwear_details' pk=product.id %}" >
                     {% elif 'clothing' in request.path %}
                         <a href="{% url 'product_clothing_details' pk=product.id %}" >
+                    {% elif 'bags' in request.path %}
+                        <a href="{% url 'product_bags_details' pk=product.id %}" >
+                        
 
                     {% endif %}
                         <img  src="{{product.product.url}}"class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image Not Available">

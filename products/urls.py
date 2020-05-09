@@ -33,9 +33,37 @@ urlpatterns = [
     path('product/kids/footwear/casuals',views.footwear,name='casuals_kids'),
     path('product/kids/footwear/sandals',views.footwear,name='sandals_kids'),
     path('product/kids/footwear/sleepers',views.footwear,name='sleepers_kids'),
-    
+
+#Bags Urls
+    path('product/men/bags/backpack',views.bags,name='backpack_men'),
+    path('product/men/bags/handbags',views.bags,name='handbags_men'),
+    path('product/men/bags/hobobags',views.bags,name='hobobags_men'),
+    path('product/men/bags/shoulderbags',views.bags,name='shoulderbags_men'),
+    path('product/men/bags/messengerbags',views.bags,name='messengerbags_men'),
+    path('product/men/bags/travellingbags',views.bags,name='travellingbags_men'),
+
+    #women
+    path('product/women/bags/backpack',views.bags,name='backpack_women'),
+    path('product/women/bags/handbags',views.bags,name='handbags_women'),
+    path('product/women/bags/hobobags',views.bags,name='hobobags_women'),
+    path('product/women/bags/shoulderbags',views.bags,name='shoulderbags_women'),
+    path('product/women/bags/messengerbags',views.bags,name='messengerbags_women'),
+    path('product/women/bags/travellingbags',views.bags,name='travellingbags_women'),
+
+    #kids
+    path('product/kids/bags/backpack',views.bags,name='backpack_kids'),
+    path('product/kids/bags/handbags',views.bags,name='handbags_kids'),
+    path('product/kids/bags/hobobags',views.bags,name='hobobags_kids'),
+    path('product/kids/bags/shoulderbags',views.bags,name='shoulderbags_kids'),
+    path('product/kids/bags/messengerbags',views.bags,name='messengerbags_kids'),
+    path('product/kids/bags/travellingbags',views.bags,name='travellingbags_kids'),
+
+
+
 
     path('product/clothing/{?P<pk>\d+}',views.product_details,name='product_clothing_details'),
     path('product/footwear/{?P<pk>\d+}',views.product_details,name='product_footwear_details'),
+    path('product/bags/{?P<pk>\d+}',views.product_details,name='product_bags_details'),
+
 
 ]

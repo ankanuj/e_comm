@@ -75,7 +75,33 @@ class Footwear(models.Model):
     size = models.CharField(max_length=20, choices= foot_size , default='m')
     gender = models.CharField(max_length=20, choices= GENDER , default='M')
     category = models.CharField(max_length=20, choices= Categories_Choices , default='Male')
-    product_type = models.CharField(max_length=20, choices= footwear_type , default='shirt')
+    product_type = models.CharField(max_length=20, choices= footwear_type , default=None)
+    price = models.FloatField()
+    is_published = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.brand_name
+
+#product type
+bags_type = (
+    ('hand_bag','hand_bag'),
+    ('backpack','backpack'),
+    ('shoulder_bag','shoulder_bag'),
+    ('messenger_bag','messenger_bag'),
+    ('hobo_bag','hobo_bag'),
+    ('travelling_bag','travelling_bag'),
+
+
+)
+
+class Bags(models.Model):
+    brand_name  = models.CharField(max_length=100)
+    brand_title = models.CharField(max_length=100)
+    item_details = models.TextField(max_length=1000)
+    product = models.ImageField(upload_to='footwear/%y/%m/%d/',blank=True)
+    gender = models.CharField(max_length=20, choices= GENDER , default='M')
+    category = models.CharField(max_length=20, choices= Categories_Choices , default='Male')
+    product_type = models.CharField(max_length=20, choices= bags_type , default=None)
     price = models.FloatField()
     is_published = models.BooleanField(default=True)
 
