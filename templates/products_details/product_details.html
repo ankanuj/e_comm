@@ -18,13 +18,16 @@
                 <img  src="{{product.product.url}}"class="img-responsive" style="min-width: 300px; max-width: 300px; min-height:400px;  max-height: 400px;" alt="Image">
             </div>
             <div class="col-md-6 ml-3">
+                <form method="POST">
+                    {% csrf_token %}
                 <h1 class="ml-2">{{ product.brand_name }}</h1>
                 <h3 class="text-info ml-2">{{ product.brand_title }}</h3>
                 <h4 class="ml-2">Price:₹{{ product.price }}</h4>
 
-                <div class="footer" id="add_basket">
-                    <form method="POST">
+                    <div class="footer" id="add_basket">
+                   
                         <div class="form-group">
+                            
                             <h6 class="ml-2">Size</h6>
                             <input class="btn ml-4" type="button" value="s" name="size" placeholder="S" >
                             <input class="btn ml-4" type="button" value="m" name="size" placeholder="M" >
@@ -32,13 +35,15 @@
                             <input class="btn ml-4" type="button" value="xxl" name="size" placeholder="XXL" >
 
                         </div>
-                      <p>
-                            <a class="btn btn-danger" type="submit" href="{% url 'cart' pk=product.id %}">Add Basket</a>
-                            <a class="btn btn-info" type="submit" href="{% url 'cart' pk=product.id %}">Buy Now</a>
+                      <p>      
+                          <input name="product_id" type="hidden" value="{{product.id}}">
+                            <button class="btn btn-danger" type="submit" href="{% url 'cart'  %}">Add Basket</button>
+                            <a class="btn btn-info" type="submit" href="{% url 'cart'  %}">Buy Now</a>
 
                         </p>
-                    </form>
-                </div>
+                    </div>
+                </form>
+
             </div>
             {% endif %}
         </div>

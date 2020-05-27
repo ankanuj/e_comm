@@ -60,7 +60,7 @@ urlpatterns = [
 
 
 
-
+    
     path('product/clothing/{?P<pk>\d+}',views.product_details,name='product_clothing_details'),
     path('product/footwear/{?P<pk>\d+}',views.product_details,name='product_footwear_details'),
     path('product/bags/{?P<pk>\d+}',views.product_details,name='product_bags_details'),
