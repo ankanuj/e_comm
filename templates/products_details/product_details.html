@@ -37,8 +37,13 @@
                         </div>
                       <p>      
                           <input name="product_id" type="hidden" value="{{product.id}}">
-                            <button class="btn btn-danger" type="submit" href="{% url 'cart'  %}">Add Basket</button>
+                            {% if user.is_authenticated %}
+                            <button class="btn btn-danger" type="submit">Add Basket</button>
                             <a class="btn btn-info" type="submit" href="{% url 'cart'  %}">Buy Now</a>
+                            {% else %}
+                            <a class="btn btn-danger" type="submit" href="{% url 'login'  %}">Add Basket</a>
+                            <a class="btn btn-info" type="submit" href="{% url 'login'  %}">Buy Now</a>
+                            {% endif %}
 
                         </p>
                     </div>

@@ -1,13 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section id="shopping_basket " class="bg-light">
-    <div class="container pt-2 pb-2">
+<section id="shopping_basket" class="bg-light">
+    <div class="container-fluid pt-2 pb-2">
         <div class="card border-0 badge-light" id="basket">
             <h3 class="bg-dark text-white">My Basket</h3>
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="card-body border bg-white">
+                <div class="col-lg-3">
+                    <div class="card-body bg-white border" id="cart_card" >
+                        <form method="POST" action="{% url 'address' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea class="form-control"name="address" type="text">
+                                {% if address %}{{address.address}}{% endif %}</textarea>
+                            </div>
+
+                            <button class="btn btn-info" type="submit">Add Address</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card-body border bg-white" id="cart_card">
+                        {% if cart %}
                         {% for cart in cart %}
                         <form method="POST">
                             {% csrf_token %}
@@ -33,18 +48,21 @@
                         
                         <hr>
 
-                    {% endfor %}    
+                    {% endfor %}  
+                    {% else %}
+                    <h3>No item in the basket.</h3>  
+                    {% endif %}
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card-body border bg-white">
+                <div class="col-lg-3">
+                    <div class="card-body border bg-white" id="cart_card">
                         <h4>Price Details ( items {{cart.count}} )</h4><hr>
                         <div class="row">
                             <div class="col-sm-5"><h4>price :</h4></div>
                             <h5 class="text-secondary pt-1 " style="margin-left: 100px;">{% for cart in cart %}{{cart.products.price}} <br>{% endfor %}</h5>
                         </div>
                         <hr>
-                        <h5 class="text-danger">Total price :&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp; {{total_price}} </h5>
+                        <h5 class="text-danger">Total price :&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;{{total_price}} </h5>
                         <button class="btn btn-danger">Place Order</button>
                     </div>
                 </div>

@@ -134,9 +134,9 @@ def bags(request):
 def product_details(request,pk):
     product = Products.objects.get(pk=pk)
     if request.method == 'POST':
-        print("hi")
+        user_id = request.user.id
         products_id  = product.id
-        cart = Cart(products_id = products_id)
+        cart = Cart(products_id = products_id,user_id = user_id)
         cart.save()
     context={
         'product':product,
