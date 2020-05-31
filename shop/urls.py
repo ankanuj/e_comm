@@ -23,9 +23,9 @@ urlpatterns = [
     path('bags/kids',views.kids_bags,name='kids_bags'),
 
 
-    path('mens/clothing/',views.clothing,name='clothing_mens'),
-    path('womens/clothing/',views.clothing,name='clothing_womens'),
-    path('kids/clothing/',views.clothing,name='clothing_kids'),
+    path('mens/clothing/',views.mens_clothing,name='clothing_mens'),
+    path('womens/clothing/',views.womens_clothing,name='clothing_womens'),
+    path('kids/clothing/',views.kids_clothing,name='clothing_kids'),
 
 
     

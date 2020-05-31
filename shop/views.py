@@ -15,8 +15,14 @@ def women_shop(request):
 def kids_shop(request):
     return render(request,'shop/kids.html')
 
-def clothing(request):
+def mens_clothing(request):
     return render(request,'shop/clothing.html')
+
+def womens_clothing(request):
+    return render(request,'shop/w_clothing.html')
+def kids_clothing(request):
+    return render(request,'shop/k_clothing.html')
+
 
 def mens_footwear(request):
     return render(request,'shop/footwear.html')
