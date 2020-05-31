@@ -1,10 +1,9 @@
 {% extends 'shop/shop.html' %}
 
 {% load static %}
-{% block title %}|Shop|Men's {% endblock %}
+{% block title %}|Shop|Footwear {% endblock %}
 
-{% block shop_title %}| Shop| Mens| Bags
-{% endblock %}
+{% block shop_title %}Womens| Footwear{% endblock %}
 
 {% block shop %}
 
@@ -12,93 +11,78 @@
     
     <div id="clothes" class="container-fluid text-center" >    
         <div class="row " >
-            <!-- hand bags -->  
+            <!--Sports Shoes -->  
         
                 <div  class="col-sm-4">
                     
-                        <a href="{% url 'handbags_men' %}" >
-                
+                        <a href="{% url 'formals_women' %}">
+                    
                     <img  src="{% static 'img/mens.jpeg' %}"class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">
                     <div class="middle">
                     <div class="text">
-                        <b>Hand Bags</b>
+                        <b>Formal Shoes</b>
                     </div>
                     </div>
-                    <h6>Hand Bags</h6>
+                    <h6>Formal Shoes</h6>
                     </a>
                 </div>
         <!-- Sports Shoes -->  
         
                 <div class="col-sm-4">
-              
-                        <a href="{% url 'backpack_men' %}" >
+                    
+                        <a href="{% url 'sports_women' %}">
                     
                     <img src="{% static 'img/womens.jpeg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">
                     <div class="middle">
                     <div class="text">
-                        <b>Backpack</b>
+                        <b>Sports Shoes</b>
                     </div>
                     </div>
-                    <h6>Backpack</h6> 
+                    <h6>Sports Shoes</h6> 
                     </a>   
                 </div>
         <!-- Casual Shoes-->  
         
                 <div class="col-sm-4">
-                    
-                        <a href="{% url 'shoulderbags_men' %}" >
+                  
+                        <a href="{% url 'casuals_women' %}">
                    
                         <img src="{% static 'img/kids.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">         
                         <div class="middle">
                         <div class="text">
-                            <b>Shoulder Bags</b>
+                            <b>Casual Shoes</b>
                         </div>
                         </div>
-                        <h6>Shoulder Bags</h6>
+                        <h6>Casual Shoes</h6>
                     </a>
                     </div>
                
         <!-- Sandals -->
                 <div class="col-sm-4">
-                    
-                        <a href="{% url 'messengerbags_men' %}" >
-                  
+                   
+                        <a href="{% url 'sandals_women' %}">
+                   
                     <img src="{% static 'img/electronics.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">
                     <div class="middle">
                     <div class="text">
-                        <b>Messenger Bags</b>
+                        <b>Sandals</b>
                     </div>
                     </div>
-                    <h6>Messenger bags</h>
+                    <h6>Sandals</h>
                     </a>
                 </div>
 <!--Sleepers-->
                 <div class="col-sm-4">
-                 
-                        <a href="{% url 'hobobags_men' %}" >
-                  
-                    <img src="{% static 'img/electronics.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">
-                    <div class="middle">
-                    <div class="text">
-                        <b>Hobo Bags</b>
-                    </div>
-                    </div>
-                    <h6>Hobo Bags</h>
-                    </a>
-                </div>
-
-<!--travelling bags-->
-                <div class="col-sm-4">
+                   
+                        <a href="{% url 'sleepers_women' %}">
                     
-                        <a href="{% url 'travellingbags_men' %}" >
-                  
                     <img src="{% static 'img/electronics.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">
                     <div class="middle">
                     <div class="text">
-                        <b>Travelling Bags</b>
+                        <b>Sleepers</b>
                     </div>
                     </div>
-                    <h6>Travelling Bags</h>
+                    <h6>Sleepers</h>
                     </a>
                 </div>
             </div>

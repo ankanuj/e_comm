@@ -10,9 +10,9 @@ urlpatterns = [
     #path('other_stuff/',views.other_shop,name='other'),
 
 
-    path('mens/footwear/',views.footwear,name='footwear_men'),
-    path('womens/footwear/',views.footwear,name='women_footwear'),
-    path('kids/footwear/',views.footwear,name='kids_footwear'),
+    path('mens/footwear/',views.mens_footwear,name='footwear_men'),
+    path('womens/footwear/',views.womens_footwear,name='women_footwear'),
+    path('kids/footwear/',views.kids_footwear,name='kids_footwear'),
 
     path('mens/watches/',views.watches,name='men_watches'),
     path('womens/watches/',views.watches,name='women_watches'),
