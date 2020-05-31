@@ -24,8 +24,13 @@ def footwear(request):
 def watches(request):
     return render(request,'shop/watches.html')
 
-def bags(request):
+def mens_bags(request): 
     return render(request,'shop/bags.html')
+def womens_bags(request): 
+    return render(request,'shop/w_bags.html')  
+def kids_bags(request): 
+    return render(request,'shop/kids_bags.html')                    
+    
 
 '''
 def electronics_shop(request):
