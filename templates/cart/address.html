@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container pt-2 pb-2" >
+    <div class="card" style="box-shadow: 4px 4px 4px darkgray;">
+        <h3 class="card-title">Delivery Address</h3>
+        <div class="card-body">
+            <form method="POST" >
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea class="form-control"name="address" type="text"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="district">District</label>
+                    <input class="form-control" name="district" type="text" placeholder="Enter District" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input class="form-control" name="state" type="text" placeholder="Enter state" required>
+                </div>
+                <div class="form-group">
+                    <label for="Zipcode">Zipcode</label>
+                    <input class="form-control" name="zipcode" type="number" placeholder="Enter zipcode" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input class="form-control" name="mobile" type="number" placeholder="Enter Mobile Number" required>
+                </div>
+            
+                <button class="btn btn-info" type="submit">Add Address</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

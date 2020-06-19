@@ -47,6 +47,10 @@ Product_type = (
     ('messenger_bag','messenger_bag'),
     ('hobo_bag','hobo_bag'),
     ('travelling_bag','travelling_bag'),
+    ('digital', 'digital'),
+    ('analog','analog'),
+    ('hybrid','hybrid'),
+    ('smart_band','smart_band')
 )
 
 class Products(models.Model):

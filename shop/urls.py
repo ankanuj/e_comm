@@ -14,9 +14,9 @@ urlpatterns = [
     path('womens/footwear/',views.womens_footwear,name='women_footwear'),
     path('kids/footwear/',views.kids_footwear,name='kids_footwear'),
 
-    path('mens/watches/',views.watches,name='men_watches'),
-    path('womens/watches/',views.watches,name='women_watches'),
-    path('kids/watches/',views.watches,name='kids_watches'),
+    path('mens/watches/',views.m_watches,name='m_watches'),
+    path('womens/watches/',views.w_watches,name='w_watches'),
+    path('kids/watches/',views.k_watches,name='k_watches'),
 
     path('bags/mens',views.mens_bags,name='men_bags'),
     path('bags/womens',views.womens_bags,name='women_bags'),

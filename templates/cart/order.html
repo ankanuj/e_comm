@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="pb-4 pt-2">
+    {% include 'partials/_alerts.html' %}
+    <form method="POST">
+        {% csrf_token %}
+    <div class="container pt-2 pb-2" style="box-shadow: 4px 4px 20px 2px darkgray;">
+        <div class="card pt-2 border-0 pb-2">
+            <h3>Order Details</h3>
+        </div>
+        <div class="card-body ">
+            <div class="container bg-light pb-4 " style="box-shadow: 4px 4px 20px 2px darkgray;">
+                <h4>Delivery Address and Contact</h4>
+                <div class="card ">
+                       {% for address in address %}
+                       <input type="hidden" name="address" value="{{address.id}}">
+                       <h6>Address:</h6><p class="ml-2" style="font-family: cursive;">{{address.address}} ,
+                        {{address.district }} ,
+                        {{address.state }}.</p>
+                        <h6>Mobile:</h6><p class="ml-2" style="font-family:sans-serif;">{{address.mobile }}</p>
+                        <h6>Zip Code:</h6><p class="ml-2" style="font-family:sans-serif;">{{address.zipcode }}
+                        </p><br>
+                        {% endfor %}
+                    
+                    
+                </div>
+                
+                
+            </div>
+            <br>
+            <div class="container bg-light pb-2" style="box-shadow: 4px 4px 20px 2px darkgray;">
+                <h4>Items details</h4>
+                {% if cart %}
+                {% for cart in cart %}
+                
+                <div class="row pt-2" > 
+                
+                        
+                        <img  src="{{cart.products.product.url}}"class="img-responsive ml-2" style="min-width: 200px; max-width: 200px; min-height:200px;  max-height: 200px;" alt="Image">
+                           
+                        <div class=" ml-3 ">
+                            <input type="hidden" name="product" value="{{cart.id}}">
+                            <h3>{{cart.products.brand_name}}</h3>
+                            <h5 style="color:lightgrey;">{{cart.products.brand_title}}</h5>
+                            <h4>Price : {{cart.products.price}}</h4>
+                            <h4>Size : {{cart.products.size}}</h4>
+                            <h4>Quantity : 1</h4>
+
+                        </div>
+
+                </div>
+                
+                <hr>
+
+                {% endfor %}  
+                {% else %}
+                <h3>No item in the basket.</h3>  
+                {% endif %}
+
+                
+            </div>
+            <br>
+            <div class="container bg-light pb-2" style="box-shadow: 4px 4px 20px 2px darkgray;">
+                <h4>Price Details ( items {{cart.count}} )</h4><hr>
+                        <div class="row">
+                            <div class="col-sm-2"><h4>price :</h4></div>
+                            <h5 class="text-secondary pt-1 ">{% for cart in cart %}{{cart.products.price}} <br>{% endfor %}</h5>
+                        </div>
+                        <hr>
+                        <h5 class="text-danger">Total price :&numsp;&numsp; &numsp;&numsp;&numsp;{{total_price}} </h5>
+            </div>
+        </div>
+        <center>
+        <button class="btn btn-danger " type="submit">place order</button>
+        </center>
+    </div>
+    </form>
+</section>
+{% endblock %}

@@ -8,14 +8,14 @@
 
 {% block shop %}
 
-<div class="card-body border">
+<div class="card-body border-0" style="box-shadow: 4px 4px 20px lightgray;">
     
       
         <div class="row" >
             <!--Shirt -->  
            {% if product %}
-            <div class="col-md-4 border">
-                <img  src="{{product.product.url}}"class="img-responsive" style="min-width: 300px; max-width: 300px; min-height:400px;  max-height: 400px;" alt="Image">
+            <div class="col-md-4 border-0">
+                <img  src="{{product.product.url}}"class="img-responsive" style="box-shadow: 4px 4px 10px rgb(24, 23, 23);min-width: 300px; max-width: 300px; min-height:400px;  max-height: 400px;" alt="Image">
             </div>
             <div class="col-md-6 ml-3">
                 <form method="POST">
@@ -29,10 +29,8 @@
                         <div class="form-group">
                             
                             <h6 class="ml-2">Size</h6>
-                            <input class="btn ml-4" type="button" value="s" name="size" placeholder="S" >
-                            <input class="btn ml-4" type="button" value="m" name="size" placeholder="M" >
-                            <input class="btn ml-4" type="button" value="xl" name="size" placeholder="Xl" >
-                            <input class="btn ml-4" type="button" value="xxl" name="size" placeholder="XXL" >
+                        
+                            <input class="btn ml-4" type="button" value="{{product.size}}" name="size" placeholder="{{product.size}}" >
 
                         </div>
                       <p>      

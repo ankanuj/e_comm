@@ -7,7 +7,7 @@
 
 {% block shop %}
 
-<div class="card-body border">
+<div class="card-body border-0" style="box-shadow: 4px 4px 20px lightgray;">
     
     <div id="clothes" class="container-fluid text-center" >    
         
@@ -41,7 +41,7 @@
     <!-- Watches-->  
     
             <div class="col-sm-3">
-                <a href="{% url 'men_watches' %}">
+                <a href="{% url 'm_watches' %}">
                     <img src="{% static 'img/kids.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">         
                     <div class="middle">
                     <div class="text">

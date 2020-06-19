@@ -8,16 +8,17 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="card-body bg-white border" id="cart_card" >
-                        <form method="POST" action="{% url 'address' %}">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <textarea class="form-control"name="address" type="text">
-                                {% if address %}{{address.address}}{% endif %}</textarea>
-                            </div>
+                        {% for address in address %}
+                        <p>{{address.address}} ,
+                        {{address.district }} ,
+                        {{address.state }}<br>
+                        {{address.mobile }}<br>
+                        {{address.zipcode }}
+                    </p>
 
-                            <button class="btn btn-info" type="submit">Add Address</button>
-                        </form>
+                        <br>
+                        {% endfor %}
+                        <a class="btn btn-info" href="{% url 'address'  %}">Add Delivery Address</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -63,7 +64,7 @@
                         </div>
                         <hr>
                         <h5 class="text-danger">Total price :&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;{{total_price}} </h5>
-                        <button class="btn btn-danger">Place Order</button>
+                        <a class="btn btn-danger" href="{% url 'order' %}">Place Order</a>
                     </div>
                 </div>
 
