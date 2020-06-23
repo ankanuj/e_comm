@@ -5,9 +5,7 @@ urlpatterns = [
     path('mens/',views.men_shop,name='mens'),
     path('women/',views.women_shop,name='women'),
     path('kids/',views.kids_shop,name='kids'),
-    #path('electronics/',views.electronics_shop,name='electronics'),
-    #path('beauty_products/',views.beauty_shop,name='beauty'),
-    #path('other_stuff/',views.other_shop,name='other'),
+    
 
 
     path('mens/footwear/',views.mens_footwear,name='footwear_men'),

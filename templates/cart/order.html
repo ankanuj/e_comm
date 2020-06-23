@@ -12,7 +12,9 @@
             <div class="container bg-light pb-4 " style="box-shadow: 4px 4px 20px 2px darkgray;">
                 <h4>Delivery Address and Contact</h4>
                 <div class="card ">
+                    {% if address %}
                        {% for address in address %}
+                       
                        <input type="hidden" name="address" value="{{address.id}}">
                        <h6>Address:</h6><p class="ml-2" style="font-family: cursive;">{{address.address}} ,
                         {{address.district }} ,
@@ -20,8 +22,11 @@
                         <h6>Mobile:</h6><p class="ml-2" style="font-family:sans-serif;">{{address.mobile }}</p>
                         <h6>Zip Code:</h6><p class="ml-2" style="font-family:sans-serif;">{{address.zipcode }}
                         </p><br>
+                       
                         {% endfor %}
-                    
+                        {% else %}
+                        <a href="{% url 'address' %}" class="btn btn-danger">Add delivery Address</a>
+                        {% endif %}
                     
                 </div>
                 

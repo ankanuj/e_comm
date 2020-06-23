@@ -34,3 +34,14 @@ class Order(models.Model):
 
     def __str__(self):
         return  self.user.username
+
+
+class PaymentDetails(models.Model):
+    trsn_date = models.CharField(verbose_name="Transaction Date",max_length=100)
+    trsn_id = models.CharField(verbose_name="Transaction id",max_length=100)
+    order_id = models.CharField(verbose_name="Order Id",max_length=100)
+    trsn_amount = models.CharField(verbose_name="Transaction Amount",max_length=100)
+    trsn_status = models.CharField(max_length=100)
+
+    def __str__(self):
+        return  self.order_id

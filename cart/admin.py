@@ -23,3 +23,10 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ('user',)
     list_per_page = 25
 admin.site.register(Order,OrderAdmin)
+
+class PaymentDetailAdmin(admin.ModelAdmin):
+    list_display = ('id','trsn_amount','order_id','trsn_date','trsn_id' )
+    list_display_links = ('id','order_id')
+    list_filter = ('order_id',)
+    list_per_page = 25
+admin.site.register(PaymentDetails,PaymentDetailAdmin)
