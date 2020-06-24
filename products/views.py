@@ -55,7 +55,7 @@ def footwear(request):
     elif 'product/womens/footwear/formals' in request.path:
         products = Products.objects.all().filter(product_type='formal',gender='F',category='womens')
     elif 'product/womens/footwear/sports' in request.path:
-        products = Products.objects.all().filter(product_type='sports',gender='F',category='woFens')
+        products = Products.objects.all().filter(product_type='sports',gender='F',category='womens')
     elif 'product/womens/footwear/casuals' in request.path:
         products = Products.objects.all().filter(product_type='casual',gender='F',category='womens')
     elif 'product/womens/footwear/sandals' in request.path:
@@ -130,6 +130,44 @@ def bags(request):
         'products':products,
     }
     return render(request,'shop/products.html',context)
+
+
+def watches(request):
+    if 'product/mens/watches/analog' in request.path:
+        products = Products.objects.all().filter(product_type='analog',gender='M',category='Mens')
+    elif 'product/mens/watches/digital' in request.path:
+        products = Products.objects.all().filter(product_type='digital',gender='M',category='Mens')
+    elif 'product/mens/watches/hybrid' in request.path:
+        products = Products.objects.all().filter(product_type='hybrid',gender='M',category='Mens')
+    elif 'product/mens/watches/smart/band' in request.path:
+        products = Products.objects.all().filter(product_type='smart_band',gender='M',category='Mens')
+    
+    #Womens section
+    elif 'product/womens/watches/digital' in request.path:
+        products = Products.objects.all().filter(product_type='digital',gender='F',category='womens')
+    elif 'product/womens/watches/analog' in request.path:
+        products = Products.objects.all().filter(product_type='analog',gender='F',category='womens')
+    elif 'product/womens/watches/hybrid' in request.path:
+        products = Products.objects.all().filter(product_type='hybrid',gender='F',category='womens')
+    elif 'product/womens/watches/smart/band' in request.path:
+        products = Products.objects.all().filter(product_type='smart_band',gender='F',category='womens')
+    
+    #kids section
+    elif 'product/kids/watches/digital' in request.path:
+        products = Products.objects.all().filter(product_type='digital',category='kids')
+    elif 'product/kids/watches/analog' in request.path:
+        products = Products.objects.all().filter(product_type='analog',category='kids')
+    elif 'product/kids/watches/hybrid' in request.path:
+        products = Products.objects.all().filter(product_type='hybrid',category='kids')
+    elif 'product/kids/watches/smart/band' in request.path:
+        products = Products.objects.all().filter(product_type='smart_band',category='kids')
+
+    
+    context = {
+        'products':products,
+    }
+    return render(request,'shop/products.html',context)
+
 
 def product_details(request,pk):
     product = Products.objects.get(pk=pk)

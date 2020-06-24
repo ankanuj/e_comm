@@ -59,11 +59,29 @@ urlpatterns = [
     path('product/kids/bags/travellingbags',views.bags,name='travellingbags_kids'),
 
 
+    path('product/mens/watches/digital',views.watches,name='m_digital'),
+    path('product/mens/watches/analog',views.watches,name='m_analog'),
+    path('product/mens/watches/hybrid',views.watches,name='m_hybrid'),
+    path('product/mens/watches/smart/band',views.watches,name='m_smart_band'),
+  
+    path('product/womens/watches/digital',views.watches,name='w_digital'),
+    path('product/womens/watches/analog',views.watches,name='w_analog'),
+    path('product/womens/watches/hybrid',views.watches,name='w_hybrid'),
+    path('product/womens/watches/smart/band',views.watches,name='w_smart_band'),
+
+    path('product/kids/watches/digital',views.watches,name='k_digital'),
+    path('product/kids/watches/analog',views.watches,name='k_analog'),
+    path('product/kids/watches/hybrid',views.watches,name='k_hybrid'),
+    path('product/kids/watches/smart/band',views.watches,name='k_smart_band'),
+
+
 
     
     path('product/clothing/{?P<pk>\d+}',views.product_details,name='product_clothing_details'),
     path('product/footwear/{?P<pk>\d+}',views.product_details,name='product_footwear_details'),
     path('product/bags/{?P<pk>\d+}',views.product_details,name='product_bags_details'),
+    path('product/watches/{?P<pk>\d+}',views.product_details,name='product_watches_details'),
+
 
 
 ]

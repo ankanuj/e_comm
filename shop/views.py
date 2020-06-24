@@ -23,7 +23,7 @@ def womens_clothing(request):
 def kids_clothing(request):
     return render(request,'shop/k_clothing.html')
 
-
+#footwear
 def mens_footwear(request):
     return render(request,'shop/footwear.html')
 
@@ -33,9 +33,15 @@ def womens_footwear(request):
 def kids_footwear(request):
     return render(request,'shop/k_footwear.html')
 
-def watches(request):
+#watches
+def m_watches(request):
     return render(request,'shop/watches.html')
+def k_watches(request):
+    return render(request,'shop/k_watches.html')
+def w_watches(request):
+    return render(request,'shop/w_watches.html')
 
+#bags
 def mens_bags(request): 
     return render(request,'shop/bags.html')
 def womens_bags(request): 

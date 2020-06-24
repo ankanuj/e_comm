@@ -6,9 +6,9 @@
 <section >
     <div  class="row mx-auto" >
         <div id="col1"class="col-md-2 pt-2 pb-2 ">
-            <div class="card bg-white">
-                <h5 class="bg-dark">Shops</h5>
-                <div class="card-body ">
+            <div class="card bg-white border-0">
+                <h5 style="background: #ff6600;">Shops</h5>
+                <div class="card-body  " style="box-shadow: 4px 4px 20px lightgray;">
                     <a class="card-link" href="{% url 'mens' %}">
                         <h6>Men's section</h6>
                     </a>
@@ -25,15 +25,16 @@
         </div>
         <!-- colum2 contaiins main content-->
         <div id="col2" class="col-md-9 pb-2 pt-2" >
-            <div class="card bg-white border-0">
-                <h5 class="bg-dark" >  <a href="{% url 'shops' %}" class="text-white"> Shops    </a>
+            <div class="card bg-white border-0" >
+                <h5 style="background: #ff6600;"> 
+                     <a href="{% url 'shops' %}" class="text-white"> Shops </a>
                     {% block shop_title %}{% endblock %}
                 </h5>
                 {% block shop %} 
-                <div class="card-body">
+                <div class="card-body border-0" style="box-shadow: 4px 4px 20px lightgray;">
                     
-                        <div id="clothes" class="container-fluid text-center" >    
-                            <div class="row" >
+                        <div id="clothes" class="container-fluid text-center"  >    
+                            <div class="row "  >
        <!-- mens-->  
                             <div  class="col-sm-4">
                                 <a href="{% url 'mens' %}">

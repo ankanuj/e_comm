@@ -1,3 +1,8 @@
+#nav{
+  background: linear-gradient(to bottom right,#ff6600 0%, #ffcc00 100%);
+}
+
+
 #about_contact{
   background: url(../img/building.jpg);
 }

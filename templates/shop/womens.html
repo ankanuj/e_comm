@@ -5,7 +5,7 @@
 
 
 {% block shop %}
-<div class="card-body border">
+<div class="card-body border-0" style="box-shadow: 4px 4px 20px lightgray;">
     
     <div id="clothes" class="container-fluid text-center" >    
         
@@ -39,8 +39,13 @@
     <!-- Watches-->  
     
             <div class="col-sm-3">
-                <a href="{% url 'women_watches' %}">
+<<<<<<< HEAD
+                <a href="{% url 'w_watches' %}">
                     <img src="{% static 'img/watches1.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">         
+=======
+                <a href="{% url 'w_watches' %}">
+                    <img src="{% static 'img/kids.jpg' %}" class="img-responsive" style="min-width: 200px; max-width: 200px; min-height:250px;  max-height: 250px;" alt="Image">         
+>>>>>>> 8aa7c4a5ddb21e4d4d4d6f7460f017b70e2da7f0
                     <div class="middle">
                     <div class="text">
                         <b>Watches</b>
