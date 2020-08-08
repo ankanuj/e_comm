@@ -24,7 +24,7 @@ def  cart(request):
         item = request.POST['item']
         remove = Cart.objects.get(pk=item)
         remove.delete()
-        return render(request,'cart/cart.html',context)
+        return redirect('cart')
     
     return render(request,'cart/cart.html',context)
 

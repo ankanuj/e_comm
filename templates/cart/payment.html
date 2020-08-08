@@ -6,7 +6,7 @@
 <h1>Please do not refresh your page</h1>
 
 <form action="https://securegw-stage.paytm.in/order/process" method="POST" name="paytm">
-    {% for key, value in data_dict.items%}
+    {% for key, value in data_dict.products%}
     <input type="hiddden" name="{{key}}" value="{{value}}">
     {% endfor %}
 </form>

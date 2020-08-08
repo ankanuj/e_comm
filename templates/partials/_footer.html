@@ -3,8 +3,8 @@
    <section>
     <div class="container-fluid" id="about_contact">
       <div class="row">
-        <div class="col-sm-4 text-white pt-2 pb-2" >
-          <div class="card" id="about_col1" style="min-height:300px;">
+        <div class="  col-md-4 col-sm-12 text-white pt-2 pb-2" >
+          <div class="card" id="about_col1" >
             <h3 class="text-center">
               contact us
             </h3>
@@ -24,48 +24,49 @@
   
   
         </div>
-      <div class="col-sm-4 text-white pt-2 pb-2">
-          <div class="card" id="about_col2" style="min-height:300px;">
+      <div class="col-sm-12 col-md-4 text-white pt-2 pb-2">
+          <div class="card" id="about_col2" >
             <h3 class="text-center">
               SHOPS
             </h3>
-            <div class="card-body">
+            <div class="card-body" id="shops" >
               <div class="row">
-                <div class="col-md-4">
-                  <h4><a class="text-white" href="{% url 'mens' %}">Mens</a></h4>
-                  <h5><a class="text-white" href="{% url 'clothing_mens' %}">Clothing</a></h5>
-                  <h5><a class="text-white" href="{% url 'footwear_men' %}">Footwear</a></h5>
-                  <h5><a class="text-white" href="{% url 'm_watches' %}">Watches</a></h5>
-                  <h5><a class="text-white" href="{% url 'men_bags' %}">Bags</a></h5>
+                <div class="col-md-4 col-sm-4">
+                  <h4 ><a class="text-white" href="{% url 'mens' %}">Mens</a></h4>
+                  <p><a class="text-white" href="{% url 'clothing_mens' %}">Clothing</a></p>
+                  <p><a class="text-white" href="{% url 'footwear_men' %}">Footwear</a></p>
+                  <p><a class="text-white" href="{% url 'm_watches' %}">Watches</a></p>
+                  <p><a class="text-white" href="{% url 'men_bags' %}">Bags</a></p>
 
 
                 </div>
 
-                <div class="col-md-4 ">
+                <div class="col-md-4 col-sm-4 col-xs">
                   <h4><a class="text-white" href="{% url 'women' %}">Womens</a></h4>
-                  <h5><a class="text-white" href="{% url 'clothing_mens' %}">Clothing</a></h5>
-                  <h5><a class="text-white" href="{% url 'women_footwear' %}">Footwear</a></h5>
-                  <h5><a class="text-white" href="{% url 'w_watches' %}">Watches</a></h5>
-                  <h5><a class="text-white" href="{% url 'women_bags' %}">Bags</a></h5>
+                  <p><a class="text-white" href="{% url 'clothing_mens' %}">Clothing</a></p>
+                  <p><a class="text-white" href="{% url 'women_footwear' %}">Footwear</a></p>
+                  <p><a class="text-white" href="{% url 'w_watches' %}">Watches</a></p>
+                  <p><a class="text-white" href="{% url 'women_bags' %}">Bags</a></p>
                 </div>
                 
-                <div class="col-md-4">
-                  <h4><a class="text-white" href="{% url 'kids' %}">Kids</a></h4>
-                  <h5><a class="text-white" href="{% url 'clothing_kids' %}">Clothing</a></h5>
-                  <h5><a class="text-white" href="{% url 'kids_footwear' %}">Footwear</a></h5>
-                  <h5><a class="text-white" href="{% url 'k_watches' %}">Watches</a></h5>
-                  <h5><a class="text-white" href="{% url 'kids_bags' %}">Bags</a></h5>
+                <div class="col-md-4 col-sm-4">
+                  <h4 ><a class="text-white" href="{% url 'kids' %}">Kids</a></h4>
+                  <p><a class="text-white" href="{% url 'clothing_kids' %}">Clothing</a></p>
+                  <p><a class="text-white" href="{% url 'kids_footwear' %}">Footwear</a></p>
+                  <p><a class="text-white" href="{% url 'k_watches' %}">Watches</a></p>
+                  <p><a class="text-white" href="{% url 'kids_bags' %}">Bags</a></p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-4 text-white pt-2 pb-2">
-          <div class="card" id="about_col3" style="min-height:300px;">
+        <div class="col-sm-12 col-md-4 text-white pt-2 pb-2">
+          <div class="card" id="about_col3" >
             <h3 class="text-center">
               your feedback
             </h3>
-            <from method="POST">
+            <form method="POST"action="{% url 'index' %}">
+              {% csrf_token %}
              <div class="form-group">
               <label for="Email">Email</label>
               <input class="form-control " type="email"  name="email" placeholder="Enter your email" required>
@@ -75,11 +76,12 @@
                 <textarea class="form-control" name="feedback" placeholder="your feedback" required></textarea>
               </div>
               <center>
-              <button class="btn btn-info" type="button">Submit</button>
+                <button type="submit" class="btn btn-big">
+                  <i class="fas fa-envelope"></i>
+                  send
+              </button>
               </center>
-
-
-            </from>
+            </form>
 
           </div>
         </div>

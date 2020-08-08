@@ -15,7 +15,9 @@
             <!--Shirt -->  
            {% if product %}
             <div class="col-md-4 border-0">
+                <a href="{{product.product.url}}" data-lightbox="products">
                 <img  src="{{product.product.url}}"class="img-responsive" style="box-shadow: 4px 4px 10px rgb(24, 23, 23);min-width: 300px; max-width: 300px; min-height:400px;  max-height: 400px;" alt="Image">
+            </a>
             </div>
             <div class="col-md-6 ml-3">
                 <form method="POST">

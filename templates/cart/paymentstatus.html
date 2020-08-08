@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 {%block content%}
 <center>
-    {% include 'partiaals/_alerts.html' %}
+    {% include 'partials/_alerts.html' %}
     <!-- this is used to print whole values return by paytm  {{response}}-->
     <div class="card" style="box-shadow:4px 4px 20px  lightgray;">
         <h1>your payment status</h1>
     <h3>order id:{{response.ORDERID}}</h3>
     {% if response.RESPCODE == '01' %}
     <h3>Order Success</h3>
+    <div class="container">
+        <div class="card border-outline-secondary" style="box-shadow:3px 3px 15px lightgray;">
+            <div class="card-body">
+                <h3>transcation id:{{response.TXNID}}</h3>
+                <h3>transcation date:{{response.TXNDATE}}</h3>
+                <h3>order status:{{response.STATUS}}</h3>
+                <h3>order id:{{response.ORDERID}}</h3>
+                <h3>Amount paid:{{response.TXNAMOUNT}}</h3>
+
+            </div>
+        </div>
+    </div>
     {% else %}
     <h3>
         order failed
